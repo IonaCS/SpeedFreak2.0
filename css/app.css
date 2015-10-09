@@ -1,0 +1,51 @@
+.board {
+	/*background-color: black;
+	height: 480px;
+	margin: auto;
+	width: 640px;
+	z-index: 1*/
+}
+
+.grass {
+  /*background-color: green;
+  display: inline-block;
+  height: 100%;
+  width: 63px;*/
+}
+
+.side_line {
+ /* background-color: orange;
+  display: inline-block;
+  height: 100%;
+  width: 10px;*/
+}
+
+.road {
+/*  background-color: #383c3e;
+  display: inline-block;
+  height: 100%;
+  width: 230px;*/
+}
+
+.centre-line {
+/*  background-color: lightgrey;
+  display: inline-block;
+  height: 100%;
+  width: 10px;*/
+}
+
+.car_slider {
+  /*height: 100px;
+  margin: -120px auto;
+  position: relative;
+  width: 480px;
+  z-index: 2;*/
+}
+
+.car-avatar {
+  /*clear: all;
+  float: left;
+  position: absolute;
+  width: 40px;
+  z-index: 3;*/
+}
