@@ -41,7 +41,7 @@
   z-index: 2;
 }
 
-.car-avatar {
+#car-avatar {
   clear: all;
   float: left;
   position: absolute;
