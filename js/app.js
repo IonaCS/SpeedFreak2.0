@@ -7,10 +7,10 @@ function move(leftOrRight) {
 
 document.body.onkeydown = function(e){
   key = e.keyCode || e.charCode|| e.which;
-  if (key === 37) {
+  if (key === 37 && parseInt(car.style.left) > 0) {
   	move(-1);
   }
-	else if (key === 39) {
+	else if (key === 39 && parseInt(car.style.left) < 440) {
 		move(1);
 	}
 	else {
