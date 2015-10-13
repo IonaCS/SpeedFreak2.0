@@ -35,7 +35,7 @@
 
 .car-slider {
   height: 100px;
-  margin: -120px auto;
+  margin: -450px auto;
   position: relative;
   width: 480px;
   z-index: 2;
@@ -44,6 +44,7 @@
 #car-avatar {
   clear: all;
   float: left;
+  margin-top: 350px;
   position: absolute;
   width: 40px;
   z-index: 3;
