@@ -3,11 +3,11 @@ car.style.left = "0px";
 car.style.top = "0px";
 
 function moveHorizontal(leftOrRight) {
-	car.style.left = parseInt(car.style.left) + Math.sign(leftOrRight)*5 + "px";
+	car.style.left = parseInt(car.style.left) + Math.sign(leftOrRight)*20 + "px";
 }
 
 function moveVertical(upOrDown) {
-	car.style.top = parseInt(car.style.top) + Math.sign(upOrDown)*5 + "px";
+	car.style.top = parseInt(car.style.top) + Math.sign(upOrDown)*20 + "px";
 }
 
 document.body.onkeydown = function(e){
