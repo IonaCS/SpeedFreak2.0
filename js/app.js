@@ -1,4 +1,4 @@
-var car = document.getElementById("car-avatar");
+var car = document.getElementById("lady");
 var roads = document.getElementsByClassName("road");
 var objects = document.getElementsByClassName("object");
 
@@ -33,11 +33,11 @@ document.body.onkeydown = function(e) {
 }
 
 function spawnObject() {
-	var barrel = document.createElement("img");
-	barrel.className = "barrel object";
-	roads[0].appendChild(barrel);
-	barrel.style.left = Math.floor(Math.random() * 410) + "px";
-	barrel.style.top = "0px"
+	var cocktail = document.createElement("img");
+	cocktail.className = "cocktail object";
+	roads[0].appendChild(cocktail);
+	cocktail.style.left = Math.floor(Math.random() * 410) + "px";
+	cocktail.style.top = "0px"
 }
 
 function moveObjectDown() {
