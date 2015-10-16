@@ -56,3 +56,9 @@
   position: absolute;
 	z-index: 2;
 }
+
+.flasher {
+  height: 70px;
+  position: absolute;
+  z-index: 2;
+}
