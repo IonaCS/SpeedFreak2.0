@@ -35,6 +35,7 @@ document.body.onkeydown = function(e) {
 function spawnObject() {
 	var cocktail = document.createElement("img");
 	cocktail.className = "cocktail object";
+	cocktail.src = "img/cocktail.png";
 	roads[0].appendChild(cocktail);
 	cocktail.style.left = Math.floor(Math.random() * 410) + "px";
 	cocktail.style.top = "0px"
