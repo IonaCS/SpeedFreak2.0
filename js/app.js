@@ -1,27 +1,27 @@
-var car = document.getElementById("lady");
+var lady = document.getElementById("lady");
 var roads = document.getElementsByClassName("road");
 var objects = document.getElementsByClassName("object");
 
-car.style.left = "0px";
-car.style.top = "0px";
+lady.style.left = "0px";
+lady.style.top = "350px";
 
 function moveHorizontal(leftOrRight) {
-	car.style.left = parseInt(car.style.left) + Math.sign(leftOrRight)*20 + "px";
+	lady.style.left = parseInt(lady.style.left) + Math.sign(leftOrRight)*20 + "px";
 }
 
 function moveVertical(upOrDown) {
-	car.style.top = parseInt(car.style.top) + Math.sign(upOrDown)*20 + "px";
+	lady.style.top = parseInt(lady.style.top) + Math.sign(upOrDown)*20 + "px";
 }
 
 document.body.onkeydown = function(e) {
   key = e.keyCode || e.charCode|| e.which;
-  if (key === 37 && parseInt(car.style.left) > 0) {
+  if (key === 37 && parseInt(lady.style.left) > 0) {
   	moveHorizontal(-1);
-  } else if (key === 38 && parseInt(car.style.top) > -350) {
+  } else if (key === 38 && parseInt(lady.style.top) > 0) {
 		moveVertical(-1);
-	}	else if (key === 39 && parseInt(car.style.left) < 440) {
+	}	else if (key === 39 && parseInt(lady.style.left) < 440) {
 		moveHorizontal(1);
-	}	else if (key === 40 && parseInt(car.style.top) < 0) {
+	}	else if (key === 40 && parseInt(lady.style.top) < 350) {
 		moveVertical(1);
 	} else {
 		return;
@@ -55,5 +55,29 @@ function moveObjectDown() {
 function timer() {
   setInterval("moveObjectDown()", 100);
   setInterval("spawnObject()", Math.floor(Math.random() * 3500) + 1000);
+  setInterval("collision()", 100)
 }
 timer();
+
+function collision() {
+	var ladyX = parseInt(lady.style.left);
+	var ladyY = parseInt(lady.style.top);
+	for (var i=0; i<objects.length; i++) {
+		var objX = parseInt(objects[i].style.left);
+		var objY = parseInt(objects[i].style.top);
+		var xDiff = Math.abs(ladyX - objX);
+		var yDiff = Math.abs(ladyY - objY);
+		var distance = Math.sqrt(
+			Math.pow(xDiff, 2) +
+			Math.pow(yDiff, 2)
+		)
+		var collisionDistance = 30;
+		if (distance < collisionDistance) {
+			if (objects[i].className === "flasher object") {
+				//console.log("trigger game over")
+			} else if (objects[i].className === "cocktail object") {
+				//console.log("add points")
+			}
+		}
+	}
+}
