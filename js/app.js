@@ -1,6 +1,7 @@
 var lady = document.getElementById("lady");
 var roads = document.getElementsByClassName("road");
 var objects = document.getElementsByClassName("object");
+var score = 0;
 
 lady.style.left = "0px";
 lady.style.top = "350px";
@@ -76,8 +77,13 @@ function detectCollision() {
 			if (objects[i].className === "flasher object") {
 				//console.log("trigger game over")
 			} else if (objects[i].className === "cocktail object") {
-				//console.log("add points")
+				cocktailCollision(objects[i]);
 			}
 		}
 	}
+}
+
+function cocktailCollision(cocktail) {
+	score += 10;
+	roads[0].removeChild(cocktail);
 }
