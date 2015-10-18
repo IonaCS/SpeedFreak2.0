@@ -55,11 +55,11 @@ function moveObjectDown() {
 function timer() {
   setInterval("moveObjectDown()", 100);
   setInterval("spawnObject()", Math.floor(Math.random() * 3500) + 1000);
-  setInterval("collision()", 100)
+  setInterval("detectCollision()", 100)
 }
 timer();
 
-function collision() {
+function detectCollision() {
 	var ladyX = parseInt(lady.style.left);
 	var ladyY = parseInt(lady.style.top);
 	for (var i=0; i<objects.length; i++) {
