@@ -4,7 +4,7 @@ var objects = document.getElementsByClassName("object");
 var score = 0;
 
 lady.style.left = "0px";
-lady.style.top = "350px";
+lady.style.top = "380px";
 
 function moveHorizontal(leftOrRight) {
 	lady.style.left = parseInt(lady.style.left) + Math.sign(leftOrRight)*20 + "px";
@@ -16,13 +16,13 @@ function moveVertical(upOrDown) {
 
 document.body.onkeydown = function(e) {
   key = e.keyCode || e.charCode|| e.which;
-  if (key === 37 ){// && parseInt(lady.style.left) > 0) {
+  if (key === 37 && parseInt(lady.style.left) > 0) {
   	moveHorizontal(-1);
-  } else if (key === 38 ){// && parseInt(lady.style.top) > 0) {
+  } else if (key === 38 && parseInt(lady.style.top) > 30) {
 		moveVertical(-1)
-	}	else if (key === 39 ){// && parseInt(lady.style.left) < 440) {
+	}	else if (key === 39 && parseInt(lady.style.left) < 440) {
 		moveHorizontal(1)
-	}	else if (key === 40 ){// && parseInt(lady.style.top) < 350) {
+	}	else if (key === 40 && parseInt(lady.style.top) < 380) {
 		moveVertical(1)
 	} else {
 		return;
@@ -72,7 +72,7 @@ function detectCollision() {
 			Math.pow(xDiff, 2) +
 			Math.pow(yDiff, 2)
 		)
-		var collisionDistance = 30;
+		var collisionDistance = 50;
 		if (distance < collisionDistance) {
 			if (objects[i].className === "flasher object") {
 				flasherCollision();
