@@ -16,14 +16,14 @@ function moveVertical(upOrDown) {
 
 document.body.onkeydown = function(e) {
   key = e.keyCode || e.charCode|| e.which;
-  if (key === 37 && parseInt(lady.style.left) > 0) {
+  if (key === 37 ){// && parseInt(lady.style.left) > 0) {
   	moveHorizontal(-1);
-  } else if (key === 38 && parseInt(lady.style.top) > 0) {
-		moveVertical(-1);
-	}	else if (key === 39 && parseInt(lady.style.left) < 440) {
-		moveHorizontal(1);
-	}	else if (key === 40 && parseInt(lady.style.top) < 350) {
-		moveVertical(1);
+  } else if (key === 38 ){// && parseInt(lady.style.top) > 0) {
+		moveVertical(-1)
+	}	else if (key === 39 ){// && parseInt(lady.style.left) < 440) {
+		moveHorizontal(1)
+	}	else if (key === 40 ){// && parseInt(lady.style.top) < 350) {
+		moveVertical(1)
 	} else {
 		return;
 	}
@@ -56,7 +56,7 @@ function moveObjectDown() {
 function timer() {
   setInterval("moveObjectDown()", 100);
   setInterval("spawnObject()", Math.floor(Math.random() * 3500) + 1000);
-  setInterval("detectCollision()", 100)
+  setInterval("detectCollision()", 100);
 }
 timer();
 
@@ -75,7 +75,7 @@ function detectCollision() {
 		var collisionDistance = 30;
 		if (distance < collisionDistance) {
 			if (objects[i].className === "flasher object") {
-				//console.log("trigger game over")
+				flasherCollision();
 			} else if (objects[i].className === "cocktail object") {
 				cocktailCollision(objects[i]);
 			}
@@ -86,4 +86,9 @@ function detectCollision() {
 function cocktailCollision(cocktail) {
 	score += 10;
 	roads[0].removeChild(cocktail);
+}
+
+function flasherCollision() {
+	alert("Game over! Your score is: " + score);
+	document.location.reload(true);
 }
