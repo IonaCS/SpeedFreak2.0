@@ -2,6 +2,7 @@ var lady = document.getElementById("lady");
 var roads = document.getElementsByClassName("road");
 var objects = document.getElementsByClassName("object");
 var score = 0;
+var randTime;
 
 lady.style.left = "0px";
 lady.style.top = "380px";
@@ -55,10 +56,15 @@ function moveObjectDown() {
 
 function timer() {
   setInterval("moveObjectDown()", 100);
-  setInterval("spawnObject()", Math.floor(Math.random() * 3500) + 1000);
   setInterval("detectCollision()", 100);
 }
 timer();
+
+function spawnObjectTimer() {
+	setInterval("spawnObject()", Math.floor(Math.random() * 3500) + 1000);
+	setInterval("spawnObjectTimer()", 10000);
+}
+spawnObjectTimer();
 
 function detectCollision() {
 	var ladyX = parseInt(lady.style.left);
